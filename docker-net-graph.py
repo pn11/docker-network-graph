@@ -167,7 +167,7 @@ def draw_link(g: Graph, networks: typing.Dict[str, Network], link: Link):
            )
 
 
-def generate_graph(verbose: bool, file: str):
+def generate_graph(verbose: bool, file: str, flask: bool = False):
     docker_client = docker.from_env()
 
     networks = get_networks(docker_client, verbose)
@@ -188,6 +188,9 @@ def generate_graph(verbose: bool, file: str):
     for link in links:
         if link.network_name != "none":
             draw_link(g, networks, link)
+
+    if flask:
+        return g.pipe(format='svg')
 
     if file:
         g.render(base)

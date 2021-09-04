@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 docker = "~=3.7"
+flask = "*"
 graphviz = "*"
 
 [dev-packages]
