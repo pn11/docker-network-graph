@@ -1,13 +1,14 @@
-# Docker Network Graph
+# Docker-Network-Graph-Flask
 
 Visualize the relationship between Docker networks and containers
 as a neat graphviz graph.
 
-
 ## Example
+
 ![example graph](https://raw.githubusercontent.com/LeoVerto/docker-network-graph/master/example.png)
 
 ## Usage
+
     usage: docker-net-graph.py [-h] [-v] [-o OUT]
 
     Visualize docker networks.
@@ -27,9 +28,10 @@ In most cases what you want to run are the following couple commands:
 This will generate an .svg file containing the graph.
 
 ## Running inside docker
+
 If you want to generate a graph for a remote system you can also easily
 run this script inside a pre-built docker container:
-    
+
     docker run --rm -v /var/run/docker.sock:/var/run/docker.sock leoverto/docker-network-graph
 
 This will just generate and output the graph in the [DOT Language][dot].
@@ -41,7 +43,6 @@ Alternatively, if you prefer to render locally, you can run
 paste the previous output there, press enter and finally CTRL+C to
 generate the file.
 
-
 For more advanced use cases you can append arguments to the `docker run`
 command as if you were running it in a local shell.
 
@@ -49,6 +50,7 @@ command as if you were running it in a local shell.
 [gvonline]: https://dreampuf.github.io/GraphvizOnline/
 
 ## Development
+
 If you'd like to contribute to this project, there is a sample docker-compose file
 using dummy containers in `test`.
 
